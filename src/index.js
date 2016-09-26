@@ -18,9 +18,7 @@ const patch = snabbdom.init([
 	snabbdomStyle
 ]);
 
-const div = document.createElement("div");
-document.body.appendChild(div);
-const renderList = ListView(div, {items: data});
+const renderList = ListView(document.querySelector(".container"), {items: data});
 
 function filterData (val = "") {
 	const value = val.trim().toLowerCase();
