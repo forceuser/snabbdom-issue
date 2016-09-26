@@ -4,9 +4,6 @@ SystemJS.config({
     "github:": "jspm_packages/github/",
     "app/": "src/"
   },
-  browserConfig: {
-    "baseURL": "/"
-  },
   meta: {
     '*.json': {
       loader: 'json'
