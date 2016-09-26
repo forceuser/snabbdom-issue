@@ -1,0 +1,48 @@
+{
+  "main": "snabbdom.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    },
+    "dist/h.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom_attributes.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom_class.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom_eventlisteners.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom_props.js": {
+      "cjsRequireDetection": false
+    },
+    "dist/snabbdom_style.js": {
+      "cjsRequireDetection": false
+    },
+    "examples/carousel-svg/build.js": {
+      "cjsRequireDetection": false
+    },
+    "examples/hero/build.js": {
+      "cjsRequireDetection": false
+    },
+    "examples/reorder-animation/build.js": {
+      "cjsRequireDetection": false
+    },
+    "examples/svg/build.js": {
+      "cjsRequireDetection": false
+    },
+    "perf/build.js": {
+      "cjsRequireDetection": false
+    }
+  },
+  "map": {
+    "./test": "./test/index.js"
+  }
+}
