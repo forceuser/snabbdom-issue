@@ -1,37 +1,47 @@
 <!doctype html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
-		<title>snabbdom-issue</title>
-		<style>
-		    input {
-		        display: block;
-		        outline: none;
-		        border: 1px solid #ccc;
-		        padding: 5px 10px;
-		        font-family: Arial;
-		        width: 300px;
-		    }
-		    input:focus {
-		        border-color: #2fa5e0;
-		        box-shadow: 0px 0px 2px 1px #2fa5e0;
-		    }
-		    .target {
-		        color: red;
-		    }
-		</style>
-		
-		<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
-		<script src="jspm_packages/system.js"></script>
-		<script src="jspm.config.js"></script>
+        <title>snabbdom-issue</title>
+        <style>
+            input {
+                display: block;
+                outline: none;
+                border: 1px solid #ccc;
+                padding: 5px 10px;
+                font-family: Arial;
+                width: 300px;
+            }
+            
+            input:focus {
+                border-color: #2fa5e0;
+                box-shadow: 0px 0px 2px 1px #2fa5e0;
+            }
+            
+            .target {
+                color: red;
+            }
+        </style>
+
+        <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+        <script src="jspm_packages/system.js"></script>
+        <script>
+            SystemJS.config({
+                baseURL: document.querySelectorAll("base").href
+            });
+        </script>
+        <script src="jspm.config.js"></script>
     </head>
+
     <body>
         <h2>
             FOCUS ON <span class="target">BERMUDA</span>
         </h2>
         <script>
-			/* global SystemJS */
+            /* global SystemJS */
             SystemJS.import('app');
         </script>
     </body>
+
 </html>
