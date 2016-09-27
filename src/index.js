@@ -20,16 +20,19 @@ const patch = snabbdom.init([
 
 const renderList = ListView(document.querySelector(".container"), {items: data});
 
+let flag = true;
+document.querySelector(".header").classList.remove("hide");
+setInterval(testRender, 3000);
+testRender();
+
+function testRender () {
+	renderList({items: filterData(flag = !flag ? "b" : "")});
+}
+
 function filterData (val = "") {
 	const value = val.trim().toLowerCase();
 	return value ? data.filter(i => i.includes(value)) : data;
 }
-
-let flag = true;
-
-setInterval(() => {
-	renderList({items: filterData(flag = !flag ? "b" : "")});
-}, 3000);
 
 function ListView (parent, initialState = {}) {
 	let vdom;
@@ -37,14 +40,10 @@ function ListView (parent, initialState = {}) {
 	const state = Object.assign(defaultState, initialState);
 	return function render (newState) {
 		Object.assign(state, newState);
-		vdom = patch(vdom || parent , h("div", {}, [
+		vdom = patch(vdom || parent, h("div", {}, [
 			...state.items.map(item =>
 				h("input", {key: item, attrs: {"data-key": item}, props: {value: item}, class: {target: item === "bermuda"}}, item)
 			)
 		]));
 	};
 }
-
-
-
-

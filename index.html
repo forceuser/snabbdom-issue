@@ -1,48 +1,43 @@
 <!doctype html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <title>snabbdom-issue</title>
         <base href="/forceuser/snabbdom-issue/master/" />
-        <style>
-            input {
-                display: block;
-                outline: none;
-                border: 1px solid #ccc;
-                padding: 5px 10px;
-                font-family: Arial;
-                width: 300px;
-            }
-            
-            input:focus {
-                border-color: #2fa5e0;
-                box-shadow: 0px 0px 2px 1px #2fa5e0;
-            }
-            
-            .target {
-                color: red;
-            }
-        </style>
-
+        <!--<base href="/" />-->
+        <link rel="stylesheet" href="index.css" type="text/css" />
         <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
         <script src="jspm_packages/system.js"></script>
         <script>
+            /* global SystemJS */
             SystemJS.config({
                 baseURL: document.querySelectorAll("base").href
             });
         </script>
         <script src="jspm.config.js"></script>
     </head>
+
     <body>
-        <h2>
-            FOCUS ON <span class="target">BERMUDA</span>
-        </h2>
+        <div class="header hide">
+            <h2>
+                Focus on <span class="target">BERMUDA</span> and wait 3-6 sec
+            </h2>
+            <p>
+                <span class="text-bold">problem</span>: focus will lost on data shrink (input with same key recreated)
+            </p>
+            <p>
+                <span class="text-bold">expected</span>: focus should stay on the same input (input with same key not recreated)
+            </p>
+        </div>
         <div class="container">
             <h4>Loading ...</h4>
         </div>
+        <div class="view-source"><a href="https://github.com/forceuser/snabbdom-issue/blob/master/src/index.js" target="_blank">view source</a></div>
         <script>
             /* global SystemJS */
             SystemJS.import('app');
         </script>
     </body>
+
 </html>
